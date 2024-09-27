@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Formulario from './components/formulario';
+import { Image } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Listado from './components/listado';
+import Robot from './components/robot';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>Adopta un Robot con Robot Lovers!</h1>
+    <Image src="https://www.istockphoto.com/photo/robot-love-gm1280000007-378000000" fluid />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Formulario />} />
+        <Route path="/robots" element={<Listado />} />
+        <Route path="/robots/:id" element={<Robot />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
