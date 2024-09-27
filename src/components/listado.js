@@ -32,7 +32,7 @@ function Listado() {
             </thead>
             <tbody>
               {robots.map((robot) => (
-                <tr key={robot.id}>
+                <tr key={robot.id} >
                   <td>{robot.id}</td>
                   <td>{robot.nombre}</td>
                   <td>{robot.modelo}</td>

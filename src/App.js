@@ -8,15 +8,15 @@ import Robot from './components/robot';
 function App() {
   return (
     <>
-    <h1>Adopta un Robot con Robot Lovers!</h1>
+    <h1 className='align-center'>Adopta un Robot con Robot Lovers!</h1>
     <Image src="https://www.istockphoto.com/photo/robot-love-gm1280000007-378000000" fluid />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Formulario />} />
         <Route path="/robots" element={<Listado />} />
-        <Route path="/robots/:id" element={<Robot />} />
       </Routes>
     </BrowserRouter>
+    <p></p>
     </>
   );
 }
