@@ -1,16 +1,75 @@
+.textoForms {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.textoForms {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.inputForms {
+  height: 53px;
+  width: 100%
+}
+
+.btn-submit {
+  background-color: #083c94;
+  color: white;
+  font-size: 20px;
+  height: 53px;
+  font-family: 'Arial Bold', sans-serif;
+}
+
+.btn-danger {
+  background-color: #e75d5d;
+  color: black;
+  font-size: 50px;
+  height: 53px;
+  font-family: 'Arial Bold', sans-serif;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 50%;
-  }
+    width: 60%;
+}
+
+tr {
+  height: 50px;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+}
   
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  th {
-      background-color: #333a40;
-      color: white
-  }
+th {
+    background-color: #333a40;
+    color: white
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

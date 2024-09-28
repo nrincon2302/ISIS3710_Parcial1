@@ -20,7 +20,6 @@ function Listado() {
 
     return (
         <div className="container">
-          <hr></hr>
           <table>
             <thead>
               <tr>
@@ -32,8 +31,8 @@ function Listado() {
             </thead>
             <tbody>
               {robots.map((robot) => (
-                <tr key={robot.id} >
-                  <td>{robot.id}</td>
+                <tr key={robot.id} style={{ borderBottom: '1px solid #ccc' }}>
+                  <td style={{fontWeight: 'bold'}}>{robot.id}</td>
                   <td>{robot.nombre}</td>
                   <td>{robot.modelo}</td>
                   <td>{robot.empresaFabricante}</td>

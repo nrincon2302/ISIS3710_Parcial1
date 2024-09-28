@@ -12,6 +12,7 @@ function Robot(props) {
                     <p>Nombre: {props.nombre}</p>
                     <p>Modelo: {props.modelo}</p>
                     <p>Capacidad de Procesamiento: {props.capacidadProcesamiento}</p>
+                    <p>Humor: {props.humor}</p>
                 </Card.Text>
             </Card.Body>
         </Card>
