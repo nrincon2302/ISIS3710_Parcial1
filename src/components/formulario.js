@@ -26,7 +26,7 @@ function Formulario() {
     }
     
     return (
-        <Container>
+        <Container style={{marginBottom: '100px'}}>
             <Row className="justify-content-md-center">
                 <Col xs lg="5" className="text-center">
                     <h2 className='textoForms'>Inicio de Sesión</h2>

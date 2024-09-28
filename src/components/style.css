@@ -1,3 +1,4 @@
+/* Formatos y estilos para Formulario*/
 .textoForms {
     font-size: 32px;
     font-weight: bold;
@@ -36,27 +37,6 @@
   font-family: 'Arial Bold', sans-serif;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
-}
-
-tr {
-  height: 50px;
-}
-
-td, th {
-  border: 1px solid #ccc;
-  text-align: left;
-  padding: 8px;
-}
-  
-th {
-    background-color: #333a40;
-    color: white
-}
-
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -70,6 +50,37 @@ th {
 }
 
 .error-message {
-  color: red;
+  color: #CD3232;
   margin-top: 10px;
+}
+
+/* Formatos y estilos para Tabla */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 12px;
+}
+  
+th {
+    background-color: #333a40;
+    color: white
+}
+
+/* Formatos y estilos para Detalles */
+p {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+img {
+  border-radius: 0px;
+  border: 1px solid black;
 }

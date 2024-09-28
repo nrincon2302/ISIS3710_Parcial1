@@ -4,11 +4,11 @@ footer {
   width: 100%;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
   color: black;
   text-align: center;
   padding: 10px;
   z-index: 1000;
-  margin-top: 100px;
 }
 
 .inicio {
