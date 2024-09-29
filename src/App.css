@@ -18,7 +18,16 @@ footer {
 .banner {
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
   align-content: center;
+}
+
+.custom-hr {
+  border: 0;
+  height: 7px;
+  background: none;
+  border-top: 2px solid gray;  /* Línea doble con un color gris claro */
+  border-bottom: 3px double #b5b4b4; /* Segunda línea doble */
+  margin: 20px 0;
 }

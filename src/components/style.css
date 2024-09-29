@@ -51,7 +51,8 @@
 
 .error-message {
   color: #CD3232;
-  margin-top: 10px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 /* Formatos y estilos para Tabla */
@@ -78,9 +79,4 @@ p {
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   color: black;
-}
-
-img {
-  border-radius: 0px;
-  border: 1px solid black;
 }

@@ -5,12 +5,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style.css'
 
 
 function Formulario() {
     const [nombre, setNombre] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleNameChange = (event) => {
         setNombre(event.target.value);
@@ -20,13 +23,34 @@ function Formulario() {
         setPassword(event.target.value);
     }
 
-    const handleSubmit = (event) => {
-        console.log(nombre);
-        console.log(password);
+    const handleSubmit = () => {
+        fetch('http://localhost:3001/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({login: nombre, password: password}), // Convertir los datos a JSON
+        })
+        .then(response => response.json()) // Procesar la respuesta como JSON
+        .then(result => {
+            (result.status === 'success' ? navigate('/robots') : setError('Error de autenticación. Revise sus credenciales.'));
+            console.log(result);
+        })
+        .catch(error => {
+            setError('Error de autenticación. Revise sus credenciales.');
+            console.error(error);
+        });
+    }
+
+    const handleCancel = () => {
+        navigate('/');
+        setNombre('');
+        setPassword('');
+        setError('');
     }
     
     return (
-        <Container style={{marginBottom: '100px'}}>
+        <Container style={!error ? {marginBottom: '100px'} : {marginBottom: '37px'}}>
             <Row className="justify-content-md-center">
                 <Col xs lg="5" className="text-center">
                     <h2 className='textoForms'>Inicio de Sesión</h2>
@@ -44,6 +68,7 @@ function Formulario() {
                                 type="text" 
                                 onChange={handleNameChange} 
                                 value={nombre}
+                                isInvalid={error}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -55,13 +80,14 @@ function Formulario() {
                                 type="password" 
                                 onChange={handlePasswordChange} 
                                 value={password}
+                                isInvalid={error}
                             />
                         </Form.Group>
                         <Row xs="auto" className="d-flex justify-content-between">
                             <Col>
                                 <Button style={{width: '225px', fontSize: '20px', borderRadius: '0', 
                                                 fontWeight: '550', color: '#fff', background: '#083c94'}}
-                                    className='btn-submit' variant="primary" type='submit'>
+                                    className='btn-submit' variant="primary" onClick={() => handleSubmit()}>
                                     Ingresar
                                 </Button>
                             </Col>
@@ -69,11 +95,12 @@ function Formulario() {
                             <Col >
                             <Button style={{width: '225px', fontSize: '20px', borderRadius: '0',
                                             fontWeight: '550', color: '#000000', background: '#e75d5d'}}
-                                className='btn-danger' variant="primary" type='cancel'>
+                                className='btn-danger' variant="primary" onClick={() => handleCancel()}>
                                 Cancelar
                             </Button>
                             </Col>
                         </Row>
+                        {error && <p className="error-message">{error}</p>}
                     </Form>
                 </Col>
             </Row>

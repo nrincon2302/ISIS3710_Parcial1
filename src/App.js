@@ -15,12 +15,12 @@ function App() {
           <Col sm="8" className="text-center">
             <h1 className='banner'>Adopta un Robot con Robot Lovers!</h1>
           </Col>
-          <hr></hr>
+          <hr className='custom-hr'></hr>
           <Col sm="10" className="robot-image">
             <Image src={banner} alt='Adopta un Robot' fluid />
           </Col>
         </Row>
-        <hr></hr>
+        <hr className='custom-hr'></hr>
       </Container>
       {/* Enrutamiento a los diferentes servicios de la aplicación */}
       <BrowserRouter>

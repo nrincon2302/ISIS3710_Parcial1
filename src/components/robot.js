@@ -37,11 +37,20 @@ function Robot() {
                     style={{width: '210px', height: '200px', marginBottom: '20px', border: '1px solid black' }}
                 />
                 <Card.Text style={{ fontSize: '18px', margin: '0 15px' }}>
-                    <span style={{ fontWeight: 'bold' }}><RiArrowRightLine/> Año de Fabricación:</span> {robot.añoFabricacion} 
+                    <span style={{ fontWeight: 'bold' }}>
+                        <RiArrowRightLine/> 
+                        Año de Fabricación:
+                    </span> {robot.añoFabricacion} 
                     <br/>
-                    <span style={{ fontWeight: 'bold' }}><RiArrowRightLine/> Capacidad de Procesamiento:</span> {robot.capacidadProcesamiento} 
+                    <span style={{ fontWeight: 'bold' }}>
+                        <RiArrowRightLine/> 
+                        Capacidad de Procesamiento:
+                    </span> {robot.capacidadProcesamiento} 
                     <br/>
-                    <span style={{ fontWeight: 'bold' }}><RiArrowRightLine/> Humor:</span> {robot.humor} 
+                    <span style={{ fontWeight: 'bold' }}>
+                        <RiArrowRightLine/> 
+                        Humor:
+                    </span> {robot.humor} 
                     <br/>
                 </Card.Text>
             </Card.Body>
