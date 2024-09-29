@@ -4,16 +4,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Robot from './robot';
 import './style.css'
 
-const { useEffect, useState } = require("react");
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
-function Listado() {
+function Listado(props) {
     const [robots, setRobots] = useState([]);
-    const [selectedRobot, setSelectedRobot] = useState(null);
-
-    const showDetail = (robot) => {
-      setSelectedRobot(robot);
-    }
+    const navigate = useNavigate();
 
     useEffect(() => {
       const URL = "http://localhost:3001/robots";
@@ -23,6 +20,11 @@ function Listado() {
           setRobots(data);
         });
     }, []);
+
+    const handleRowClick = (robotID) => {
+      // Navegamos a la ruta deseada
+      navigate(`/robots/${robotID}`);
+    };
 
     return (
         <Container style={{marginBottom: '30px'}}>
@@ -39,7 +41,8 @@ function Listado() {
             </thead>
             <tbody>
               {robots.map((robot) => (
-                <tr key={robot.id} style={{ borderBottom: '1px solid #ccc' }} onClick={() => showDetail(robot)}>
+                <tr key={robot.id} style={{ borderBottom: '1px solid #ccc', cursor: 'pointer' }} 
+                    onClick={() => handleRowClick(robot.id)} >
                   <td style={{fontWeight: 'bold'}}>{robot.id}</td>
                   <td>{robot.nombre}</td>
                   <td>{robot.modelo}</td>
@@ -51,7 +54,7 @@ function Listado() {
           </Col>
           <Col xs='auto'/>
           <Col xs={4}>
-            {selectedRobot ? <Robot {...selectedRobot}/> : null}
+            {props.ruta ? <Robot /> : null}
           </Col>
           </Row>
         </Container>

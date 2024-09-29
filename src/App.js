@@ -26,7 +26,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Formulario />} />
-          <Route path="/robots" element={<Listado />} />
+          <Route path="/robots" element={<Listado ruta={false}/>} />
+          <Route path="/robots/:robotId" element={<Listado ruta={true}/>}/>
         </Routes>
       </BrowserRouter>
       <footer>
