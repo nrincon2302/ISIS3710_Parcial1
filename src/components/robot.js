@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import './style.css';
 
+import { FormattedMessage } from "react-intl";
 
 function Robot() {
     const params = useParams();
@@ -39,17 +40,17 @@ function Robot() {
                 <Card.Text style={{ fontSize: '18px', margin: '0 15px' }}>
                     <span style={{ fontWeight: 'bold' }}>
                         <RiArrowRightLine/> 
-                        Año de Fabricación:
+                        <FormattedMessage id="Year"/>:
                     </span> {robot.añoFabricacion} 
                     <br/>
                     <span style={{ fontWeight: 'bold' }}>
                         <RiArrowRightLine/> 
-                        Capacidad de Procesamiento:
+                        <FormattedMessage id="Capacity"/>:
                     </span> {robot.capacidadProcesamiento} 
                     <br/>
                     <span style={{ fontWeight: 'bold' }}>
                         <RiArrowRightLine/> 
-                        Humor:
+                        <FormattedMessage id="Mood"/>:
                     </span> {robot.humor} 
                     <br/>
                 </Card.Text>

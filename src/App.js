@@ -7,13 +7,15 @@ import Listado from './components/listado';
 import './App.css';
 import banner from './images/banner.png';
 
+import { FormattedMessage } from "react-intl";
+
 function App() {
   return (
     <>
       <Container className='inicio'>
         <Row className="justify-content-center">
           <Col sm="8" className="text-center">
-            <h1 className='banner'>Adopta un Robot con Robot Lovers!</h1>
+            <h1 className='banner'><FormattedMessage id="Banner"/></h1>
           </Col>
           <hr className='custom-hr'></hr>
           <Col sm="10" className="robot-image">
@@ -31,7 +33,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <footer>
-        <p>Contact us: +57 3102105253 - info@robot-lovers.com - @robot-lovers</p>
+        <p><FormattedMessage id="Footer"/></p>
       </footer>
     </>
     );

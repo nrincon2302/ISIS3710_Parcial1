@@ -1,0 +1,17 @@
+{
+    "Banner": "Adopt a Robot with Robot Lovers!",
+    "Footer": "Contact us: +57 3102105253 - info@robot-lovers.com - @robot-lovers",
+    "LoginTitle": "Enter your credentials",
+    "Username": "Username",
+    "Password": "Password",
+    "LoginButton": "Log In",
+    "CancelButton": "Cancel",
+    "AuthError": "Authentication error. Check your credentials.",
+    "Id": "Id",
+    "Name": "Name",
+    "Model": "Model",
+    "Company": "Manufacturing Company",
+    "Year": "Year of Manufacture",
+    "Capacity": "Processing Capacity",
+    "Mood": "Mood"
+}

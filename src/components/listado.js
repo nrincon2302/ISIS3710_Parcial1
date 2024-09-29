@@ -7,6 +7,7 @@ import './style.css'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { FormattedMessage } from "react-intl";
 
 function Listado(props) {
     const [robots, setRobots] = useState([]);
@@ -33,10 +34,10 @@ function Listado(props) {
           <table>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Modelo</th>
-                <th>Empresa Fabricante</th>
+                <th><FormattedMessage id="Id"/></th>
+                <th><FormattedMessage id="Name"/></th>
+                <th><FormattedMessage id="Model"/></th>
+                <th><FormattedMessage id="Company"/></th>
               </tr>
             </thead>
             <tbody>

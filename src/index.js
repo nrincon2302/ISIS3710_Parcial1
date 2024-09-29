@@ -5,11 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {IntlProvider} from 'react-intl';
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  (navigator.language.startsWith("es") ? 
+    <IntlProvider locale="es" messages= {localeEsMessages}>
+      <App/>
+    </IntlProvider>
+    :
+    <IntlProvider locale="en" messages= {localeEnMessages}>
+      <App/>
+    </IntlProvider>
+  )
 );
 
 // If you want to start measuring performance in your app, pass a function
